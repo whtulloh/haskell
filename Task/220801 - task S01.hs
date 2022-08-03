@@ -22,15 +22,15 @@ kurangi g h = g - h
 -- Task 3
 -- -----------------------------------------
 -- Perbaiki signature function dibawah ini 
-multiplication :: Int -> Int
-multiplication  a = 3 * 2
+multiplication :: Int
+multiplication = 3 * 2
 
 
 -- -----------------------------------------
 -- Task 4
 -- -----------------------------------------
-bagidua :: Int -> Float
-bagidua x = fromIntegral x / 2
+bagidua :: Int -> Int
+bagidua x = x `div` 2
 
 
 -- -----------------------------------------
