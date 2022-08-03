@@ -1,2 +1,5 @@
 # haskell
-HandOn Haskell Classroom and Task
+Hands On Haskell
+
+- For Classroom
+- For Task
