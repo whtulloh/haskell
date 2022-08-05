@@ -14,6 +14,8 @@
 -- TASK 2
 -- -----------------------------------------
 -- Perbaiki function dibawah ini agar bisa berjalan tanpa error
+-- kurangi :: Int -> Int -> Int
+-- kurangi g h = g - x
 kurangi :: Int -> Int -> Int
 kurangi g h = g - h
 
@@ -22,6 +24,8 @@ kurangi g h = g - h
 -- Task 3
 -- -----------------------------------------
 -- Perbaiki signature function dibawah ini 
+-- multiplication :: Int -> Int
+-- multiplication = 3 * 2
 multiplication :: Int
 multiplication = 3 * 2
 
@@ -29,6 +33,8 @@ multiplication = 3 * 2
 -- -----------------------------------------
 -- Task 4
 -- -----------------------------------------
+-- bagidua :: Int -> Int -> Int
+-- bagidua x = x / 2
 bagidua :: Int -> Int
 bagidua x = x `div` 2
 
@@ -37,6 +43,15 @@ bagidua x = x `div` 2
 -- Task 5
 -- -----------------------------------------
 -- Ada sebuah function sbb
+-- myNestedCond :: Int -> Int
+-- myNestedCond a = if a <= 2
+--                     then a + 2
+--                     else
+--                         if a <= 6
+--                         then a
+--                         else a - 2
+-- sekarang gimana caranya jika angka 2 dan 6 dari code diatas, 
+-- ingin ganti dengan variable yg dapat nilai dari beberapa argument, silahkan ubah codenya
 myNestedCond :: Int -> Int -> Int -> Int
 myNestedCond a b c = if a <= b
                     then a + 2
@@ -44,9 +59,6 @@ myNestedCond a b c = if a <= b
                         if a <= c
                         then a
                         else a - 2
--- sekarang gimana caranya jika angka 2 dan 6 dari code diatas, 
--- ingin ganti dengan variable yg dapat nilai dari beberapa argument, silahkan ubah codenya.
-
 
 -- -----------------------------------------
 -- Task 6

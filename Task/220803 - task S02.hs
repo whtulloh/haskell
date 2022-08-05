@@ -15,7 +15,8 @@ tambahListDepan a b = a : b
 -- ghci> tambahListBelakang 10 [1,2,3]
 -- [1,2,3,10]
 tambahListBelakang :: Int -> [Int] -> [Int]
-tambahListBelakang a b = b ++ [a]
+tambahListBelakang a b = b ++ [a] -- atau 
+-- tambahListBelakang a b = b ++ (a : [])
 
 
 -- -------------------------------
@@ -55,4 +56,5 @@ cekAmbil10 a
 -- menggunakan: take n [1,2,3,4,5,6,7,8,9,10]
 -- menggunakan pattern matching untuk kondisi
 cekAmbil10PM :: [Int] -> [Int]
+cekAmbil10PM [] = []
 cekAmbil10PM a = if length a <= 10 then a else take 5 a
