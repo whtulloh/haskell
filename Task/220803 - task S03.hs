@@ -1,3 +1,4 @@
+import System.Win32 (xBUTTON1)
 -- Masukan sebuah list dari nomor credit card sbb [4,5,5,6,7,3,7,5,8,6,8,9,9,8,5,5]
 
 -- -----------------------------
@@ -12,6 +13,12 @@
 dropLast :: [Int] -> [Int]
 dropLast [] = []
 dropLast a = take ((length a)-1) a
+-- ATAU
+-- dropLast :: [Int] -> [Int]
+-- dropLast [] = []
+-- dropLast [x] = []
+-- droplast (x:xs) = x:dropLast xs
+
 -- Run: checkDigit [4,5,5,6,7,3,7,5,8,6,8,9,9,8,5,5]
 -- Expected checkDigit:  5
 -- checkDigit :: [Int] -> Int
@@ -19,6 +26,10 @@ dropLast a = take ((length a)-1) a
 checkDigit :: [Int] -> Int
 checkDigit [] = 0
 checkDigit a = last a
+-- ATAU
+-- checkDigit :: [Int] -> Int
+-- checkDigit [x] = x
+-- checkDigit (_:xs) = checkDigit xs
 
 -- -----------------------------
 -- Task 2
@@ -31,6 +42,10 @@ checkDigit a = last a
 reverseList :: [Int] -> [Int]
 reverseList [] = []
 reverseList a = reverse a
+-- ATAU
+-- reverseList :: [Int] -> [Int]
+-- reverseList [] = []
+-- reverseList (x:xs) = reverseList xs ++ [x]
 
 -- -----------------------------
 -- Task 3
@@ -42,7 +57,8 @@ reverseList a = reverse a
 -- ???
 multiplyOddPlacesby2 :: [Int] -> [Int]
 multiplyOddPlacesby2 [] = []
-multiplyOddPlacesby2 x = [10,8,18,9,16,6,16,5,14,3,14,6,10,5,8] -- HARD CODE :D
+multiplyOddPlacesby2 [x] = [2*x]
+multiplyOddPlacesby2 (x:y:xs) = (2*x):y: multiplyOddPlacesby2 xs
 
 -- -----------------------------
 -- Task 4
@@ -69,6 +85,9 @@ subtract9 (x : xs)
 addAll :: [Int] -> Int
 addAll [] = 0
 addAll x = sum x
+-- ATAU
+-- addAll :: [Int] -> Int
+-- addAll xs = sum xs
 
 -- -----------------------------
 -- Task 6
