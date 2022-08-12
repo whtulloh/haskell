@@ -71,6 +71,7 @@ cobaParseLog logContents = case (words logContents) of
 -- cobaParseLog "W 12 la la la" -> expected: LogMessage Warning 12 "la la la"
 -- cobaParseLog "E 12 la la la" -> expected: LogMessage (Error 12) *** Exception: Prelude.read: no parse
 
+-- Prelude function by haskel
 -- ghci> words "halo saya rudi" -> expected: ["halo","saya","rudi"]
 -- ghci> unwords ["halo","saya","rudi"] -> expected: "halo saya rudi"
 -- ghci> :t map -> expected: map :: (a -> b) -> [a] -> [b]

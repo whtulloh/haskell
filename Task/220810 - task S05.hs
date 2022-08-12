@@ -91,8 +91,8 @@ whatWentWrong logs = whatWentWrongHelper (sortedLogs logs)
 
 main :: IO ()
 main = do 
-      let logs = "E 200 90 read/write problem \nI 42 you are doing great\nW 89 warning harddisk almost full\nE 100 12 your disk is full\nflastjhjhskjkjsd\nE 80 10 data overflow"
+      logs <- readFile "../Asset/S05.log"
       let parsedLog = parseLog logs
-      print parsedLog
+      print (whatWentWrong parsedLog)
 -- main -> expected:
--- [LogMessage (Error 200) 90 "read/write problem",LogMessage Info 42 "you are doing great",LogMessage Warning 89 "warning harddisk almost full",LogMessage (Error 100) 12 "your disk is full",Unknown "flastjhjhskjkjsd",LogMessage (Error 80) 10 "data overflow"]
+-- ["Flange failed!","Bad pickle-flange interaction detected","Way too many pickles"]

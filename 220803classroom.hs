@@ -72,12 +72,12 @@ foo n
 -- foo (-1) -> expected: 0
 
 
--- Haskel Char / Array of String
+-- Prelude function Haskel Char / Array of String
 -- ghci> ['s','t','r','o','n','g'] -> expected: "strong"
 -- ghci> drop 3 "Hello" -> expected: "lo"
 
 
--- Haskel Array
+-- Prelude Function Haskel Array
 -- ghci> head [1,2,3,4,5] -> expected: 1
 -- ghci> tail [1,2,3,4,5] -> expected: [2,3,4,5]
 -- ghci> last [1,2,3,4,5] -> expected: 5
