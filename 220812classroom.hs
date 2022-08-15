@@ -1,7 +1,12 @@
--- Date Time
--- import Data.Time.Clock.POSIX (getPOSIXTime)
--- (round) <$> getPOSIXTime
--- formatTime defaultTimeLocale "%Y/%m/%d %H:%M:%S" <$> getZonedTime
+-- Prelude Date Time
+import Data.Time.Clock.POSIX (getPOSIXTime)
+-- ghci > getPOSIXTime -> expected: 1660572920.0370908s --> epoch formated date
+-- ghci > (round) <$> getPOSIXTime -> expected: 1660572948 --> epoch formated rounded
+import Data.Time
+-- ghci> getZonedTime -> expected: 2022-08-15 21:16:57.0385638 SE Asia Standard Time
+-- ghci> getCurrentTime -> expected: 2022-08-15 14:17:03.6223363 UTC
+-- ghci> formatTime defaultTimeLocale "%Y/%m/%d %H:%M:%S" <$> getZonedTime -> expected: "2022/08/15 21:18:27"
+-- ghci> formatTime defaultTimeLocale "%Y/%m/%d %H:%M:%S" <$> getCurrentTime -> expected: "2022/08/15 14:20:13"
 
 -- Data type InList
 data IntList = Empty | Cons Int IntList deriving Show
@@ -94,10 +99,15 @@ main = do
     print (mapOtherList double myOtherList)
 -- main
 -- C 2 E
--- C (-3) (C 5 E) 
+-- C (-3) (C 5 E)
+-- C 4 (C (-6) (C 10 E))
 
 addme :: Int -> Int -> Int
 addme arg1 arg2 = arg1 + arg2
+-- addme 1 2 -> expected: 3
+-- addme 1 3 -> expected: 4
 
 addme' :: Num a => a -> a -> a
 addme' arg1 arg2 = arg1 + arg2
+-- addme' 1 2 -> expected: 3
+-- addme' 1 3 -> expected: 4
