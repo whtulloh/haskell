@@ -1,8 +1,3 @@
--- Jawaban dikirimkan ke
--- email: andy@emurgo.io
--- Subject: Haskell Task S09
-
-
 -- COMPOSITE
 -- --------------
 -- TASK 1
@@ -39,13 +34,15 @@ selectMod0 = filter even
 -- TASK 3
 -- --------------
 -- Buatlah Function comFunc dengan argument list Int dan output list Int, 
+-- Output adalah hasil dari pengecekan lebih besar dari 10, disaring lagi hanya yang genap
 -- Lalu pilih lagi hanya yg lebih besar dari 8 dan Susun dengan menggunakan composition (.)
 -- Expected Result:
--- ghci> comFunc [10,6,8]
+-- ghci> comFunc [10,6,8,12]
 -- [10]
 
 comFunc :: [Int] -> [Int]
-comFunc = filter (\x -> x > 8)
+comFunc = filter (>8) . selectMod0 . cekgt10
+-- comFunc = filter (>8)
 
 
 -- LAMBDA
@@ -61,7 +58,8 @@ comFunc = filter (\x -> x > 8)
 -- False
 
 isMod0 :: Int -> Bool
-isMod0 = (==0) . (\x -> x `mod` 2)
+isMod0 = (\x -> x `mod` 2 == 0)
+-- isMod0 = (==0) . (\x -> x `mod` 2)
 
 
 -- --------------
