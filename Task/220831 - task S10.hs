@@ -49,6 +49,9 @@ fun2 n
     | even n = n + fun2 (n `div` 2)
     | otherwise = fun2 (3 * n + 1)
 
+fun2b :: Int -> Int
+fun2b = sum . filter even . takeWhile (>1) . iterate (\n -> if even n then n `div` 2 else 3 * n + 1)
+
 help1 :: Int -> Int
 help1 n = if even n then n `div` 2 else 3 * n + 1
 
@@ -56,8 +59,8 @@ help2 :: Int -> [Int]
 help2 1 = []
 help2 n = n : help2 (help1 n)
 
-fun2b :: Int -> Int
-fun2b = sum . filter even . (help2)
+fun2b' :: Int -> Int
+fun2b' = sum . filter even . (help2)
 
 -- Exclusive OR by Pak Sony
 xor :: [Bool] -> Bool
