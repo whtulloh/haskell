@@ -52,7 +52,7 @@ main = do
         result <- translateText "Haskell is an interesting programming language" "en" (code lang)
         -- T.putStrLn ((name lang) <> " : " <> result)
         pure ((name lang) <> " : " <> result)
-    mapM_ (T.putStrLn) (results)
+    mapM_ T.putStrLn results
 
 
 -- Get languages from API
