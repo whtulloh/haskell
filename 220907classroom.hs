@@ -21,12 +21,22 @@ instance Listable Bool where
 -- --> expected [0]
 
 instance Listable ([Int]) where
-    toList a = a
--- ghci> toList [1,2,3::Int]
---  --> expected [1,2,3]
+  toList xs = xs
+--   toList xs = id
+-- > toList [1,2,3::Int]
+-- [1,2,3]
+
+instance Listable (Tree Int) where
+  toList Empty = []
+  toList (Node element left right) = (toList left) ++ [element] ++ (toList right)
+-- > toList sampleTree
+-- [2, 1, 3]
 
 data Tree a = Empty | Node a (Tree a) (Tree a)
+   deriving Show
 
-foo x y = sum (toList x) == sum (toList y) || x < y
+-- sample data 
+sample = 123
 
--- instance Listable Tree a where
+sampleTree :: Tree Int
+sampleTree = Node 1 (Node 2 Empty Empty) (Node 3 Empty Empty)
