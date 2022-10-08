@@ -1,3 +1,5 @@
 /cabal_project/dist-newstyle/*
 /haskell_api/dist-newstyle/*
+/haskell_spock
 /haskell_web/dist-newstyle/*
+/haskell_webdb/dist-newstyle/*
